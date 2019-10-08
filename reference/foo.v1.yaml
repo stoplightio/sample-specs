@@ -1,5 +1,5 @@
 title: Example
 type: object
 properties:
-  foo:
-    $ref: ../../foo.v1.yaml
+  bar:
+    type: string
