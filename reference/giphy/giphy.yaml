@@ -91,7 +91,7 @@ responses:
   BadRequest:
     description: Your request was formatted incorrectly or missing required parameters.
   Forbidden:
-    description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+    description: "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
   NotFound:
     description: 'The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.'
   TooManyRequests:
@@ -442,7 +442,7 @@ definitions:
           type: string
         type: array
       id:
-        description: This GIF's unique ID
+        description: "This GIF's unique ID"
         example: YsTs5ltWtEhnq
         type: string
       images:
@@ -530,7 +530,7 @@ definitions:
               - description: Data surrounding a version of this GIF limited to 50kb that displays the first 1-2 seconds of the GIF.
         type: object
       import_datetime:
-        description: The creation or upload date from this GIF's source.
+        description: "The creation or upload date from this GIF's source."
         example: '2013-08-01 12:41:48'
         format: date-time
         type: string
@@ -539,7 +539,7 @@ definitions:
         example: g
         type: string
       slug:
-        description: The unique slug used in this GIF's URL
+        description: "The unique slug used in this GIF's URL"
         example: confused-flying-YsTs5ltWtEhnq
         type: string
       source:
@@ -666,14 +666,15 @@ definitions:
         type: integer
     type: object
   User:
-    description: 'The User Object contains information about the user associated with a GIF and URLs to assets such as that user''s avatar image, profile, and more.'
+    description: "The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more."
+    type: object
     properties:
       avatar_url:
-        description: The URL for this user's avatar image.
+        description: "The URL for this user's avatar image."
         example: 'https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif'
         type: string
       banner_url:
-        description: The URL for the banner image that appears atop this user's profile page.
+        description: "The URL for the banner image that appears atop this user's profile page."
         example: 'https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg'
         type: string
       display_name:
@@ -681,7 +682,7 @@ definitions:
         example: JoeCool4000
         type: string
       profile_url:
-        description: The URL for this user's profile.
+        description: "The URL for this user's profile."
         example: 'https://giphy.com/cheezburger/'
         type: string
       twitter:
@@ -692,4 +693,7 @@ definitions:
         description: The username associated with this user.
         example: joecool4000
         type: string
-    type: object
+      foo:
+        $ref: '#/definitions/Meta'
+      bar:
+        $ref: '#/definitions/Image'
