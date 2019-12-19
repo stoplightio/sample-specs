@@ -6,7 +6,7 @@ basePath: /v1
 info:
   contact:
     email: support@giphy.com
-  description: Giphy API
+  description: Giphy API phantom change
   termsOfService: 'https://developers.giphy.com/'
   title: Giphy
   version: '1.0'
