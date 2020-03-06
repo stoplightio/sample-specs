@@ -1,0 +1,38 @@
+type: object
+properties:
+  frames:
+    description: The number of frames in this GIF.
+    example: '15'
+    type: string
+  height:
+    description: The height of this GIF in pixels.
+    example: '200'
+    type: string
+  mp4:
+    description: The URL for this GIF in .MP4 format.
+    example: 'https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4'
+    type: string
+  mp4_size:
+    description: The size in bytes of the .MP4 file corresponding to this GIF.
+    example: '25123'
+    type: string
+  size:
+    description: The size of this GIF in bytes.
+    example: '32381'
+    type: string
+  url:
+    description: The publicly-accessible direct URL for this GIF.
+    example: 'https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif'
+    type: string
+  webp:
+    description: The URL for this GIF in .webp format.
+    example: 'https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp'
+    type: string
+  webp_size:
+    description: The size in bytes of the .webp file corresponding to this GIF.
+    example: '12321'
+    type: string
+  width:
+    description: The width of this GIF in pixels.
+    example: '320'
+    type: string
