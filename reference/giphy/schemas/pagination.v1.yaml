@@ -1,0 +1,19 @@
+type: object
+description: |
+  The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+properties:
+  count:
+    description: Total number of items returned.
+    example: 25
+    format: int32
+    type: integer
+  offset:
+    description: Position in pagination.
+    example: 75
+    format: int32
+    type: integer
+  total_count:
+    description: Total number of items available.
+    example: 250
+    format: int32
+    type: integer

@@ -1,0 +1,27 @@
+description: "The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more."
+type: object
+properties:
+  avatar_url:
+    description: "The URL for this user's avatar image."
+    example: 'https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif'
+    type: string
+  banner_url:
+    description: "The URL for the banner image that appears atop this user's profile page."
+    example: 'https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg'
+    type: string
+  display_name:
+    description: The display name associated with this user (contains formatting the base username might not).
+    example: JoeCool4000
+    type: string
+  profile_url:
+    description: "The URL for this user's profile."
+    example: 'https://giphy.com/cheezburger/'
+    type: string
+  twitter:
+    description: 'The Twitter username associated with this user, if applicable.'
+    example: '@joecool4000'
+    type: string
+  username:
+    description: The username associated with this user.
+    example: joecool4000
+    type: string

@@ -1,0 +1,17 @@
+type: object
+description: |
+  The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+properties:
+  msg:
+    description: HTTP Response Message
+    example: OK
+    type: string
+  response_id:
+    description: A unique ID paired with this response from the API.
+    example: 57eea03c72381f86e05c35d2
+    type: string
+  status:
+    description: HTTP Response Code
+    example: 200
+    format: int32
+    type: integer
