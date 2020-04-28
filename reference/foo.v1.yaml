@@ -1,5 +1,0 @@
-title: Example
-type: object
-properties:
-  bar:
-    type: string

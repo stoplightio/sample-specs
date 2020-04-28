@@ -253,12 +253,12 @@ paths:
           name: field
           required: true
           type: string
-        - description: '<a href="https://trello.com/1/appKey/generate"  target="_blank">Generate your application key</a>'
+        - description: '[Generate your application key](https://trello.com/1/appKey/generate)'
           in: query
           name: key
           required: true
           type: string
-        - description: '<a href="https://trello.com/docs/gettingstarted/index.html#getting-a-token-from-a-user"  target="_blank">Getting a token from a user</a>'
+        - description: '[Getting a token from a user](https://trello.com/docs/gettingstarted/index.html#getting-a-token-from-a-user)'
           in: query
           name: token
           required: true
@@ -266,8 +266,6 @@ paths:
       responses:
         '200':
           description: Success
-          schema:
-            $ref: 'http://localhost:8080/api/nodes.raw?srn=gh/dgrstl/master-data-demo/reference/common/models/user.json&mid=16'
         '400':
           description: Server rejection
       security:

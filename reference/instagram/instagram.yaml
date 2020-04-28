@@ -76,7 +76,7 @@ tags:
   - description: Get geographies
     name: geographies
 paths:
-  '/geographies/{geo-id}/media/recent':
+  '/geographies/{geo_id}/media/recent':
     get:
       deprecated: true
       description: |
@@ -92,7 +92,7 @@ paths:
       parameters:
         - description: The geography ID.
           in: path
-          name: geo-id
+          name: geo_id
           required: true
           type: string
         - description: Max number of media to return.
@@ -171,13 +171,13 @@ paths:
       summary: Search for a location by geographic coordinate.
       tags:
         - locations
-  '/locations/{location-id}':
+  '/locations/{location_id}':
     get:
       description: Get information about a location.
       parameters:
         - description: The location ID.
           in: path
-          name: location-id
+          name: location_id
           required: true
           type: string
       responses:
@@ -192,13 +192,13 @@ paths:
       summary: Get information about a location.
       tags:
         - locations
-  '/locations/{location-id}/media/recent':
+  '/locations/{location_id}/media/recent':
     get:
       description: Get a list of recent media objects from a given location.
       parameters:
         - description: The location ID.
           in: path
-          name: location-id
+          name: location_id
           required: true
           type: string
         - description: Return media after this UNIX timestamp.
@@ -328,7 +328,7 @@ paths:
       summary: Get information about a media object.
       tags:
         - media
-  '/media/{media-id}':
+  '/media/{media_id}':
     get:
       description: |
         Get information about a media object. The returned type key will allow you to differentiate between image and
@@ -339,7 +339,7 @@ paths:
       parameters:
         - description: The ID of the media resource.
           in: path
-          name: media-id
+          name: media_id
           required: true
           type: string
       responses:
@@ -355,13 +355,13 @@ paths:
       summary: Get information about a media object.
       tags:
         - media
-  '/media/{media-id}/comments':
+  '/media/{media_id}/comments':
     get:
       description: Get a list of recent comments on a media object.
       parameters:
         - description: The ID of the media resource.
           in: path
-          name: media-id
+          name: media_id
           required: true
           type: string
       responses:
@@ -388,7 +388,7 @@ paths:
       parameters:
         - description: The ID of the media resource.
           in: path
-          name: media-id
+          name: media_id
           required: true
           type: string
         - description: Text to post as a comment on the media object as specified in `media-id`.
@@ -408,19 +408,19 @@ paths:
       summary: Create a comment on a media object.
       tags:
         - comments
-  '/media/{media-id}/comments/{comment-id}':
+  '/media/{media_id}/comments/{comment_id}':
     delete:
       description: |
         Remove a comment either on the authenticated user's media object or authored by the authenticated user.
       parameters:
         - description: The ID of the media resource.
           in: path
-          name: media-id
+          name: media_id
           required: true
           type: string
         - description: The ID of the comment entry.
           in: path
-          name: comment-id
+          name: comment_id
           required: true
           type: string
       responses:
@@ -435,13 +435,13 @@ paths:
       summary: Remove a comment.
       tags:
         - comments
-  '/media/{media-id}/likes':
+  '/media/{media_id}/likes':
     delete:
       description: Remove a like on this media by the currently authenticated user.
       parameters:
         - description: The ID of the media resource.
           in: path
-          name: media-id
+          name: media_id
           required: true
           type: string
       responses:
@@ -461,7 +461,7 @@ paths:
       parameters:
         - description: The ID of the media resource.
           in: path
-          name: media-id
+          name: media_id
           required: true
           type: string
       responses:
@@ -482,7 +482,7 @@ paths:
       parameters:
         - description: The ID of the media resource.
           in: path
-          name: media-id
+          name: media_id
           required: true
           type: string
       responses:
@@ -518,13 +518,13 @@ paths:
       summary: Search for tags by name.
       tags:
         - tags
-  '/tags/{tag-name}':
+  '/tags/{tag_name}':
     get:
       description: Get information about a tag object.
       parameters:
         - description: The tag name.
           in: path
-          name: tag-name
+          name: tag_name
           required: true
           type: string
       responses:
@@ -539,7 +539,7 @@ paths:
       summary: Get information about a tag object.
       tags:
         - tags
-  '/tags/{tag-name}/media/recent':
+  '/tags/{tag_name}/media/recent':
     get:
       description: |
         Get a list of recently tagged media. Use the `max_tag_id` and `min_tag_id` parameters in the pagination
@@ -547,7 +547,7 @@ paths:
       parameters:
         - description: The tag name.
           in: path
-          name: tag-name
+          name: tag_name
           required: true
           type: string
         - description: Count of tagged media to return.
@@ -682,17 +682,17 @@ paths:
       summary: List the users who have requested this user's permission to follow.
       tags:
         - relationships
-  '/users/{user-id}':
+  '/users/{user_id}':
     get:
       description: |
         Get basic information about a user. To get information about the owner of the access token, you can use
-        **self** instead of the `user-id`.
+        **self** instead of the `user_id`.
 
         Security scope `public_content` is required to read information about other users.
       parameters:
         - description: 'The ID of a user to get information about, or **self** to retrieve information about authenticated user.'
           in: path
-          name: user-id
+          name: user_id
           required: true
           type: string
       responses:
@@ -710,15 +710,15 @@ paths:
       summary: Get basic information about a user.
       tags:
         - users
-  '/users/{user-id}/followed-by':
+  '/users/{user_id}/followed-by':
     get:
       description: |
         Get the list of users this user is followed by. To get users followed by the owner of the access token, you
-        can use **self** instead of the `user-id`.
+        can use **self** instead of the `user_id`.
       parameters:
         - description: 'The ID of a user, or **self** to retrieve information about authenticated user.'
           in: path
-          name: user-id
+          name: user_id
           required: true
           type: string
       responses:
@@ -733,15 +733,15 @@ paths:
       summary: Get the list of users this user is followed by.
       tags:
         - relationships
-  '/users/{user-id}/follows':
+  '/users/{user_id}/follows':
     get:
       description: |
         Get the list of users this user follows. To get follows of the owner of the access token, you can use **self**
-        instead of the `user-id`.
+        instead of the `user_id`.
       parameters:
         - description: 'The ID of a user, or **self** to retrieve information about authenticated user.'
           in: path
-          name: user-id
+          name: user_id
           required: true
           type: string
       responses:
@@ -756,17 +756,17 @@ paths:
       summary: Get the list of users this user follows.
       tags:
         - relationships
-  '/users/{user-id}/media/recent':
+  '/users/{user_id}/media/recent':
     get:
       description: |
         Get the most recent media published by a user. To get the most recent media published by the owner of the
-        access token, you can use **self** instead of the `user-id`.
+        access token, you can use **self** instead of the `user_id`.
 
         Security scope `public_content` is required to read information about other users.
       parameters:
         - description: 'The ID of a user to get recent media of, or **self** to retrieve media of authenticated user.'
           in: path
-          name: user-id
+          name: user_id
           required: true
           type: string
         - description: Count of media to return.
@@ -809,13 +809,13 @@ paths:
       summary: Get the most recent media published by a user.
       tags:
         - users
-  '/users/{user-id}/relationship':
+  '/users/{user_id}/relationship':
     get:
       description: Get information about a relationship to another user.
       parameters:
         - description: The ID of a user to get information about.
           in: path
-          name: user-id
+          name: user_id
           required: true
           type: string
       responses:
@@ -835,7 +835,7 @@ paths:
       parameters:
         - description: The ID of the target user.
           in: path
-          name: user-id
+          name: user_id
           required: true
           type: string
         - description: Type of action to apply for relationship with the user.
