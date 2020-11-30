@@ -91,7 +91,7 @@ responses:
   BadRequest:
     description: Your request was formatted incorrectly or missing required parameters.
   Forbidden:
-    description: "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+    description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
   NotFound:
     description: 'The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.'
   TooManyRequests:
@@ -133,6 +133,7 @@ paths:
       summary: Get GIFs by ID
       tags:
         - gifs
+      deprecated: true
   /gifs/random:
     get:
       description: |
@@ -162,6 +163,7 @@ paths:
       summary: Random GIF
       tags:
         - gifs
+      deprecated: true
   /gifs/search:
     get:
       description: |
@@ -417,12 +419,12 @@ paths:
         - stickers
 definitions:
   Gif:
-    $ref: './schemas/gif.v1.yaml'
+    $ref: ./schemas/gif.v1.yaml
   Image:
-    $ref: './schemas/image.v1.yaml'
+    $ref: ./schemas/image.v1.yaml
   Meta:
-    $ref: './schemas/meta.v1.yaml'
+    $ref: ./schemas/meta.v1.yaml
   Pagination:
-    $ref: './schemas/pagination.v1.yaml'
+    $ref: ./schemas/pagination.v1.yaml
   User:
-    $ref: './schemas/user.v1.yaml'
+    $ref: ./schemas/user.v1.yaml
