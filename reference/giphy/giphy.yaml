@@ -96,6 +96,8 @@ responses:
       properties:
         data:
           type: array
+          items: 
+            properties: {}
         meta:
           type: object
           properties:
@@ -115,6 +117,14 @@ responses:
       required:
         - data
         - meta
+    examples:
+      application/json:
+        data: []
+        meta:
+          status: 400
+          msg: 'Please specify GIF ids in correct format like gifid2, gifid2'
+          error_code: 400
+          response_id: 179eb5a0b422b53953f49a84761863bcf7bc1a88
   Forbidden:
     description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
     schema:
@@ -135,7 +145,6 @@ responses:
         data:
           type: array
           items:
-            required: []
             properties: {}
         meta:
           type: object
@@ -144,10 +153,8 @@ responses:
               type: number
             msg:
               type: string
-              minLength: 1
             response_id:
               type: string
-              minLength: 1
           required:
             - status
             - msg
@@ -155,6 +162,13 @@ responses:
       required:
         - data
         - meta
+    examples:
+      application/json:
+        data: []
+        meta:
+          status: 404
+          msg: Not Found
+          response_id: 6995665c98ecc3a0ff1cd3e453540066a1af9e9e
   TooManyRequests:
     description: |
       Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
@@ -171,7 +185,7 @@ paths:
         - $ref: '#/parameters/gifIds'
       responses:
         '200':
-          description: 'OK'
+          description: OK
           schema:
             properties:
               data:
@@ -194,7 +208,6 @@ paths:
       summary: Get GIFs by ID
       tags:
         - gifs
-      deprecated: true
   /gifs/random:
     get:
       description: |
@@ -213,7 +226,6 @@ paths:
                 $ref: '#/definitions/Gif'
               meta:
                 $ref: '#/definitions/Meta'
-            
         '400':
           $ref: '#/responses/BadRequest'
         '403':
