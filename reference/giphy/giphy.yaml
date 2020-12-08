@@ -90,10 +90,71 @@ parameters:
 responses:
   BadRequest:
     description: Your request was formatted incorrectly or missing required parameters.
+    schema:
+      description: ''
+      type: object
+      properties:
+        data:
+          type: array
+        meta:
+          type: object
+          properties:
+            status:
+              type: number
+            msg:
+              type: string
+            error_code:
+              type: number
+            response_id:
+              type: string
+          required:
+            - status
+            - msg
+            - error_code
+            - response_id
+      required:
+        - data
+        - meta
   Forbidden:
     description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+    schema:
+      description: ''
+      type: object
+      properties:
+        message:
+          type: string
+          minLength: 1
+      required:
+        - message
   NotFound:
     description: 'The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.'
+    schema:
+      description: ''
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            required: []
+            properties: {}
+        meta:
+          type: object
+          properties:
+            status:
+              type: number
+            msg:
+              type: string
+              minLength: 1
+            response_id:
+              type: string
+              minLength: 1
+          required:
+            - status
+            - msg
+            - response_id
+      required:
+        - data
+        - meta
   TooManyRequests:
     description: |
       Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
@@ -110,7 +171,7 @@ paths:
         - $ref: '#/parameters/gifIds'
       responses:
         '200':
-          description: ''
+          description: 'OK'
           schema:
             properties:
               data:
@@ -146,12 +207,13 @@ paths:
         '200':
           description: ''
           schema:
+            type: object
             properties:
               data:
                 $ref: '#/definitions/Gif'
               meta:
                 $ref: '#/definitions/Meta'
-            type: object
+            
         '400':
           $ref: '#/responses/BadRequest'
         '403':
@@ -163,7 +225,6 @@ paths:
       summary: Random GIF
       tags:
         - gifs
-      deprecated: true
   /gifs/search:
     get:
       description: |
