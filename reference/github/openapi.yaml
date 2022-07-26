@@ -30604,7 +30604,6 @@ components:
         type: string
         enum:
         - created
-        - updated
         default: created
     direction:
       name: direction
