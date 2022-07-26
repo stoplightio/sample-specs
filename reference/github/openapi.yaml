@@ -29355,7 +29355,7 @@ components:
         default: false
     sort:
       name: sort
-      description: One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
+      description: Foo
       in: query
       required: false
       schema:
