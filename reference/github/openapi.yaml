@@ -29362,7 +29362,7 @@ components:
         type: string
         enum:
           - updated
-        default: created
+        default: updated
     direction:
       name: direction
       description: One of `asc` (ascending) or `desc` (descending).
