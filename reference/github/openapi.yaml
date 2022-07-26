@@ -29355,7 +29355,7 @@ components:
         default: false
     sort:
       name: sort
-      description: Foo
+      description: Foo3
       in: query
       required: false
       schema:
