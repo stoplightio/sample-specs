@@ -1,5 +1,0 @@
-title: Example2
-type: object
-properties:
-  foo:
-    $ref: ../../foo.v1.yaml
